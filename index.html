@@ -48,21 +48,6 @@
             text-shadow: 0 0 5px #34A853;
             animation: pulse 2s infinite;
         }
-        .devfolio-btn {
-            display: inline-block;
-            margin-top: 15px;
-            transition: transform 0.2s, box-shadow 0.3s;
-        }
-        .devfolio-btn img {
-            width: 250px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px #4285F4;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .devfolio-btn img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px #4285F4;
-        }
         .sponsorship {
             margin-top: 20px;
             font-size: 1.4rem;
@@ -100,17 +85,21 @@
         <div class="countdown" id="countdown"></div>
 
         <!-- Apply with Devfolio Button -->
-        <a href="https://devfolio.co" target="_blank" class="devfolio-btn">
-            <img src="assets/01.png" alt="Apply with Devfolio button">
-        </a>
+        <div 
+            class="apply-button" 
+            data-hackathon-slug="hackoclock-1" 
+            data-button-theme="dark"
+            style="height: 44px; width: 312px;">
+        </div>
 
         <div class="sponsorship">Sponsors</div>
         <div class="sponsors">
             <img src="https://devfolio.co/favicon.ico" alt="DEVFOLIO LOGO">
-            <img src="https://ethindia.dev/favicon.ico" alt="ETHINDIA LOGO">
+            <img src="https://ethindia.dev/favicon.ico" alt="ETHIndia LOGO">
             <img src="https://polygon.technology/favicon.ico" alt="Polygon logo">
         </div>
     </div>
+
     <script>
         function countdownTimer() {
             const eventDate = new Date('March 29, 2025 00:00:00').getTime();
@@ -134,5 +123,9 @@
         }
         countdownTimer();
     </script>
+
+    <!-- Devfolio SDK Script -->
+    <script defer async src="https://apply.devfolio.co/v2/sdk.js"></script>
+
 </body>
 </html>
