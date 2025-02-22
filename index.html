@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HackOclock - Coming Soon</title>
-    <a href="https://devfolio.co" target="_blank" class="register-btn">Apply with Devfolio</a>
-
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
         body {
@@ -50,22 +48,18 @@
             text-shadow: 0 0 5px #34A853;
             animation: pulse 2s infinite;
         }
-        .register-btn {
+        .devfolio-btn {
             display: inline-block;
             margin-top: 15px;
-            padding: 12px 24px;
-            font-size: 1.2rem;
-            color: #fff;
-            background: #4285F4;
-            border: none;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            box-shadow: 0 0 10px #4285F4;
             transition: transform 0.2s, box-shadow 0.3s;
         }
-        .register-btn:hover {
+        .devfolio-btn img {
+            width: 250px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #4285F4;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .devfolio-btn img:hover {
             transform: scale(1.05);
             box-shadow: 0 0 20px #4285F4;
         }
@@ -104,14 +98,17 @@
         <h1>HackOclock</h1>
         <p>Join us for an electrifying hackathon by GDG IILM University on 29th March 2025. Stay tuned for updates!</p>
         <div class="countdown" id="countdown"></div>
-        
-        <a href="https://devfolio.co" target="_blank" class="register-btn">Register Now</a>
-        
+
+        <!-- Apply with Devfolio Button -->
+        <a href="https://devfolio.co" target="_blank" class="devfolio-btn">
+            <img src="assets/01.png" alt="Apply with Devfolio button">
+        </a>
+
         <div class="sponsorship">Sponsors</div>
         <div class="sponsors">
-            <img src="assets\Devfolio_Logo-Colored@2x.png" alt="DEVFOLIO LOGO">
-            <img src="assets\ethindia-light.png" alt="polygon logo">
-            <img src="assets\eth.png.png" alt="ETHINDIA LOGO">
+            <img src="https://devfolio.co/favicon.ico" alt="DEVFOLIO LOG">
+            <img src="https://ethindia.dev/favicon.ico" alt="ETHINDIA LOGO">
+            <img src="https://polygon.technology/favicon.ico" alt="Polygon logo">
         </div>
     </div>
     <script>
