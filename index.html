@@ -15,65 +15,85 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: #121212;
-            color: #4285F4;
+            background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+            color: #fff;
             text-align: center;
             overflow: hidden;
         }
         .container {
             max-width: 600px;
-            padding: 20px;
-            border: 2px solid #4285F4;
-            border-radius: 10px;
-            box-shadow: 0 0 15px #4285F4;
-            background: rgba(0, 0, 0, 0.9);
+            padding: 25px;
+            border: 3px solid #4285F4;
+            border-radius: 15px;
+            box-shadow: 0 0 20px #4285F4;
+            background: rgba(20, 20, 20, 0.95);
             animation: fadeIn 2s ease-in-out;
         }
         h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             color: #EA4335;
-            text-shadow: 0 0 10px #EA4335;
+            text-shadow: 0 0 15px #EA4335;
             animation: glow 1.5s infinite alternate;
         }
         p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: #DDD;
         }
         .countdown {
-            font-size: 2rem;
-            margin: 20px 0;
+            font-size: 1.8rem;
+            margin: 15px 0;
             color: #34A853;
             text-shadow: 0 0 5px #34A853;
             animation: pulse 2s infinite;
         }
-        .clock {
-            width: 150px;
-            height: 150px;
-            border: 5px solid #FBBC05;
-            border-radius: 50%;
-            position: relative;
-            margin: 20px auto;
-            box-shadow: 0 0 20px #FBBC05;
-        }
-        .hand {
-            position: absolute;
-            width: 50%;
-            height: 2px;
+        .register-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 24px;
+            font-size: 1.2rem;
+            color: #fff;
             background: #4285F4;
-            top: 50%;
-            transform-origin: 100%;
-            transform: rotate(90deg);
-            transition: transform 0.5s cubic-bezier(0.4, 2.3, 0.3, 1);
+            border: none;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 0 10px #4285F4;
+            transition: transform 0.2s, box-shadow 0.3s;
         }
-        .hand.minute {
-            height: 3px;
-            background: #34A853;
+        .register-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #4285F4;
         }
-        .hand.second {
-            height: 2px;
-            background: #EA4335;
+        .sponsorship {
+            margin-top: 20px;
+            font-size: 1.4rem;
+            color: #FBBC05;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px #FBBC05;
+        }
+        .sponsors img {
+            width: 90px;
+            margin: 10px;
+            transition: transform 0.3s;
+        }
+        .sponsors img:hover {
+            transform: scale(1.1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 5px #EA4335; }
+            to { text-shadow: 0 0 20px #EA4335; }
+        }
+        @keyframes pulse {
+            0% { text-shadow: 0 0 5px #34A853; }
+            50% { text-shadow: 0 0 15px #34A853; }
+            100% { text-shadow: 0 0 5px #34A853; }
         }
     </style>
 </head>
@@ -81,14 +101,17 @@
     <div class="container">
         <h1>HackOclock</h1>
         <p>Join us for an electrifying hackathon by GDG IILM University on 29th March 2025. Stay tuned for updates!</p>
-        <div class="clock">
-            <div class="hand hour" id="hour-hand"></div>
-            <div class="hand minute" id="minute-hand"></div>
-            <div class="hand second" id="second-hand"></div>
-        </div>
         <div class="countdown" id="countdown"></div>
+        
+        <a href="https://devfolio.co" target="_blank" class="register-btn">Register Now</a>
+        
+        <div class="sponsorship">Sponsors</div>
+        <div class="sponsors">
+            <img src="assets\Devfolio_Logo-Colored@2x.png" alt="DEVFOLIO LOGO">
+            <img src="assets\ethindia-light.png" alt="ETHIndia">
+            <img src="assets\Logo + LogoMark  - Filled On Dark 1.png" alt="ETHINDIA LOGO">
+        </div>
     </div>
-
     <script>
         function countdownTimer() {
             const eventDate = new Date('March 29, 2025 00:00:00').getTime();
@@ -111,23 +134,6 @@
             }, 1000);
         }
         countdownTimer();
-
-        function updateClock() {
-            const now = new Date();
-            const hours = now.getHours() % 12;
-            const minutes = now.getMinutes();
-            const seconds = now.getSeconds();
-
-            const hourDeg = (hours * 30) + (0.5 * minutes);
-            const minuteDeg = (minutes * 6);
-            const secondDeg = (seconds * 6);
-
-            document.getElementById("hour-hand").style.transform = `rotate(${hourDeg}deg)`;
-            document.getElementById("minute-hand").style.transform = `rotate(${minuteDeg}deg)`;
-            document.getElementById("second-hand").style.transform = `rotate(${secondDeg}deg)`;
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
     </script>
 </body>
 </html>
