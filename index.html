@@ -1,129 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HackOclock - Coming Soon</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
-        body {
-            font-family: 'Orbitron', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
-            color: #fff;
-            text-align: center;
-            overflow: hidden;
-        }
-        .container {
-            max-width: 600px;
-            padding: 25px;
-            border: 3px solid #4285F4;
-            border-radius: 15px;
-            box-shadow: 0 0 20px #4285F4;
-            background: rgba(20, 20, 20, 0.95);
-            animation: fadeIn 2s ease-in-out;
-        }
-        h1 {
-            font-size: 3rem;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            color: #EA4335;
-            text-shadow: 0 0 15px #EA4335;
-            animation: glow 1.5s infinite alternate;
-        }
-        p {
-            font-size: 1.2rem;
-            color: #DDD;
-        }
-        .countdown {
-            font-size: 1.8rem;
-            margin: 15px 0;
-            color: #34A853;
-            text-shadow: 0 0 5px #34A853;
-            animation: pulse 2s infinite;
-        }
-        .sponsorship {
-            margin-top: 20px;
-            font-size: 1.4rem;
-            color: #FBBC05;
-            text-transform: uppercase;
-            text-shadow: 0 0 10px #FBBC05;
-        }
-        .sponsors img {
-            width: 90px;
-            margin: 10px;
-            transition: transform 0.3s;
-        }
-        .sponsors img:hover {
-            transform: scale(1.1);
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes glow {
-            from { text-shadow: 0 0 5px #EA4335; }
-            to { text-shadow: 0 0 20px #EA4335; }
-        }
-        @keyframes pulse {
-            0% { text-shadow: 0 0 5px #34A853; }
-            50% { text-shadow: 0 0 15px #34A853; }
-            100% { text-shadow: 0 0 5px #34A853; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hack O'Clock</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Importing Pixelated Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <!-- Applying Pixelated Font to All Content -->
+  <style>
+    * {
+      font-family: 'Press Start 2P', cursive;
+    }
+    .carousel-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .carousel {
+      display: flex;
+      gap: 20px;
+      transition: transform 0.3s ease;
+    }
+    .tile {
+      min-width: 300px;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 8px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    }
+    .arrow {
+      cursor: pointer;
+      font-size: 2rem;
+      margin: 0 10px;
+    }
+    .dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin: 0 5px;
+      background: #ccc;
+    }
+    .dot.active {
+      background: #333;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>HackOclock</h1>
-        <p>Join us for an electrifying hackathon by GDG IILM University on 29th March 2025. Stay tuned for updates!</p>
-        <div class="countdown" id="countdown"></div>
+  <!-- Grid Background -->
+  <div class="grid-container"></div>
 
-        <!-- Apply with Devfolio Button -->
-        <div 
-            class="apply-button" 
-            data-hackathon-slug="hackoclock-1" 
-            data-button-theme="dark"
-            style="height: 44px; width: 312px;">
+  <!-- Nav Bar -->
+  <nav>
+    <div class="logos">
+      <img src="assets/GDGlogo.png" alt="GDG" class="gdg-logo">
+      <img src="assets/iilmlogo.png" alt="IILM" class="iilm-logo">
+    </div>
+    <div class="menu-icon">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2 class="presenting">PRESENTING</h2>
+    <h1 class="title">
+      <span class="hack">HACK</span> 
+      <span class="oclock">O'CLOCK</span>
+    </h1>
+    <div class="button-container">
+      <button class="btn btn-left">Register Now</button>
+      <button class="btn btn-right">Join Discord</button>
+    </div>  
+  </section>
+
+  <section class="section-2">
+    <h2>IN SPONSORS WITH</h2>
+    <hr>
+    <div class="carousel">
+      <img src="assets/sponsores/image.png" alt="IILM" class="iilm-logo">
+      <img src="assets/sponsores/image.png" alt="IILM" class="iilm-logo">
+      <img src="assets/sponsores/image.png" alt="IILM" class="iilm-logo">
+    </div>
+    <hr>
+  </section>
+
+  <section class="section-3">
+    <h1>ABOUT US</h1>
+    <div class="about-content">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque inventore esse odio officiis at laboriosam, explicabo adipisci impedit dolorum tenetur ea cumque aliquam atque, maiores voluptates. Eum eos voluptatum est!
+        Voluptate facere beatae, vero eaque aperiam voluptatibus officia vitae modi totam. Reiciendis maiores nostrum id temporibus quibusdam voluptdvjhsgdjhsgdj hgdchav asdc casdc gshdcsd cgcdsa d cvdcvdghscd 
+      </p>
+      <div class="dino"></div>
+    </div>
+  </section>
+
+  <section class="section-4">
+    <h1>GLIMPSES</h1>
+    <div class="container">
+      <div class="row">
+        <div class="b-card"></div>
+        <div class="x-card"></div>
+        <div class="x-card"></div>
+      </div>
+      <div class="row">
+        <div class="c-card"></div>
+        <div class="c-card"></div>
+        <div class="d-card"></div>
+      </div>
+      <div class="row">
+        <div class="s-card"></div>
+        <div class="s-card"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-judges">
+    <h1>JUDGES</h1>
+    <div class="judges-container">
+      <div class="judge-card">
+        <h2>Vaibhav Raj</h2>
+        <div class="judge-image"></div>
+        <p class="judge-role">Senior Developer at Google</p>
+        <div class="social-icons">
+          <img src="./assets/linkedin.png" alt="LinkedIn">
+          <img src="./assets/mail.png" alt="Email">
+          <img src="./assets/insta.png" alt="Instagram">
+        </div>
+      </div>
+      <div class="judge-card">
+        <h2>Vaihav Raj</h2>
+        <div class="judge-image"></div>
+        <p class="judge-role">Senior Developer at Google</p>
+        <div class="social-icons">
+          <img src="./assets/linkedin.png" alt="LinkedIn">
+          <img src="./assets/mail.png" alt="Email">
+          <img src="./assets/insta.png" alt="Instagram">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-5">
+    <h1>VENUE</h1>
+    <div class="venue-card">
+      <div class="venue-text">
+        <h2>Institute of<br>Engineering &<br>Technology</h2>
+        <h3>IILM University</h3>
+        <p>Greater Noida,<br>KP 1, UP, 201306</p>
+        <button class="directions" onclick="window.location.href='https://www.google.com/maps/dir/28.4609435,77.4893496/Plot+No.18,+Iilm+College+Of+Engineering+%26+Technology,+16,+Knowledge+Park+II,+Greater+Noida,+Uttar+Pradesh+201306/@28.4615198,77.4890829,18z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x390cc1e13dcbf0eb:0xfcf1c4d9749a78b4!2m2!1d77.4913143!2d28.4603517?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D';">
+          Directions
+        </button>
+      </div>
+      <div class="venue-image">
+        <img src="./assets/iilmbuilding.png" alt="IILM University">
+      </div>
+    </div>
+  </section>
+
+  <section class="TIMELINE">
+    <h1>TIMELINE</h1>
+    <div class="time-card">
+      <img src="./assets/timeline.png" alt="Timeline">
+      <div class="schedule">
+        <div class="days">
+          <p>DAY 1</p>
+          <hr>
+          <p>DAY 2</p>
+        </div>
+        <div class="events">
+          <ul>
+            <li>Registration 9:00</li>
+            <li>Opening Ceremony 9:45</li>
+            <li>Idea Sacking 10:57</li>
+            <li>Registration 9:00</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="problem-statement">
+    <h1>Problem Statement</h1>
+    <div class="carousel-container">
+      <div class="arrow left" onclick="moveLeft()">&#10094;</div>
+      <div class="carousel-wrapper">
+        <div class="carousel" id="carousel">
+          <div class="tile">No Poverty</div>
+          <div class="tile">Zero Hunger</div>
+          <div class="tile">Good Health and Well-being</div>
+          <div class="tile">Quality Education</div>
+          <div class="tile">Gender Equality</div>
+          <div class="tile">Clean Water and Sanitation</div>
+          <div class="tile">Affordable and Clean Energy</div>
+          <div class="tile">Decent Work and Economic Growth</div>
+          <div class="tile">Industry, Innovation and Infrastructure</div>
+          <div class="tile">Reduced Inequality</div>
+          <div class="tile">Sustainable Cities and Communities</div>
+          <div class="tile">Responsible Consumption and Production</div>
+          <div class="tile">Climate Action</div>
+          <div class="tile">Life Below Water</div>
+          <div class="tile">Life on Land</div>
+          <div class="tile">Peace and Justice Strong Institutions</div>
+          <div class="tile">Partnerships to achieve the Goal</div>
+        </div>
+      </div>
+      <div class="arrow right" onclick="moveRight()">&#10095;</div>
+    </div>
+    <div class="dots" id="dots"></div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+        <!-- Logos and Social Section -->
+        <div class="logo-section">
+            <div class="main-logos">
+                <img src="./assets/GDGlogo.png" alt="Google Developer Group" class="logo">
+                <img src="./assets/iilmlogo.png" alt="IILM University" class="logo">
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-icon linkedin"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon gmail"><i class="fas fa-envelope"></i></a>
+                <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
 
-        <div class="sponsorship">Sponsors</div>
-        <div class="sponsors">
-            <img src="assets\Devfolio_Logo-White@2x.png" alt="DEVFOLIO LOGO">
-            <img src="assets\ethindia-light.png" alt="ETHIndia LOGO">
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Description -->
+            <div class="description">
+                <span class="hack-text">HackOclock</span>, a groundbreaking hackathon by 
+                <span class="gdg-text">Google Developers Group</span> and 
+                <span class="iilm-text">IILM University</span>, 
+                <span class="location-text">Greater Noida U.P.</span>, 
+                redefines creativity and technology. Join us in the pursuit of innovation, 
+                transcending traditional hackathons.
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="nav-links">
+                <div class="links-column">
+                    <h3>Useful Links</h3>
+                    <a href="#">Link tree</a>
+                    <a href="#">Devfolio</a>
+                </div>
+                <div class="links-column">
+                    <a href="#">Register</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Our Sponsors</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">Problem Themes</a>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <script>
-        function countdownTimer() {
-            const eventDate = new Date('March 29, 2025 00:00:00').getTime();
-            const interval = setInterval(function() {
-                const now = new Date().getTime();
-                const timeLeft = eventDate - now;
-                
-                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-                
-                document.getElementById("countdown").innerHTML = 
-                    `${days}d ${hours}h ${minutes}m ${seconds}s`;
-                
-                if (timeLeft < 0) {
-                    clearInterval(interval);
-                    document.getElementById("countdown").innerHTML = "The hackathon has started!";
-                }
-            }, 1000);
-        }
-        countdownTimer();
-    </script>
+    <!-- Credits -->
+    <div class="credits">
+        Designed &amp; Developed by love of:  Google Developers Group IILM University
+    </div>
+</footer>
 
-    <!-- Devfolio SDK Script -->
-    <script defer async src="https://apply.devfolio.co/v2/sdk.js"></script>
+  
+  
 
+  
+  
+  <script src="script.js"></script>
 </body>
 </html>
