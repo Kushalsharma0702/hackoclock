@@ -12,6 +12,11 @@
   <style>
     * {
       font-family: 'Press Start 2P', cursive;
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
     }
     .carousel-container {
       display: flex;
@@ -22,38 +27,155 @@
     }
     .carousel {
       display: flex;
-      gap: 20px;
+      gap: 2vw;
       transition: transform 0.3s ease;
     }
     .tile {
-      min-width: 300px;
-      padding: 1rem;
+      min-width: 30vw;
+      padding: 1vw;
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(10px);
-      border-radius: 8px;
+      border-radius: 0.8vw;
       text-align: center;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      border: 0.1vw solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4vw 30vw rgba(0, 0, 0, 0.1);
     }
     .arrow {
       cursor: pointer;
-      font-size: 2rem;
-      margin: 0 10px;
+      font-size: 2vw;
+      margin: 0 1vw;
     }
     .dots {
       display: flex;
       justify-content: center;
-      margin-top: 1rem;
+      margin-top: 1vw;
     }
     .dot {
-      width: 10px;
-      height: 10px;
+      width: 1vw;
+      height: 1vw;
       border-radius: 50%;
-      margin: 0 5px;
+      margin: 0 0.5vw;
       background: #ccc;
     }
     .dot.active {
       background: #333;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1vw;
+      background: #333;
+      color: #fff;
+    }
+    .logos img {
+      height: 4vw;
+      margin-right: 1vw;
+    }
+    .menu-icon {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .menu-icon .bar {
+      width: 2.5vw;
+      height: 0.3vw;
+      background-color: #fff;
+      margin: 0.4vw 0;
+    }
+    .hero {
+      text-align: center;
+      padding: 2vw;
+    }
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 1vw;
+      margin-top: 1vw;
+    }
+    .btn {
+      padding: 0.5vw 1vw;
+      background: #333;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 0.5vw;
+    }
+    .section-2, .section-3, .section-4, .section-judges, .section-5, .TIMELINE, .problem-statement {
+      padding: 2vw;
+      text-align: center;
+    }
+    .carousel img {
+      max-width: 100%;
+      height: auto;
+    }
+    .venue-card {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1vw;
+    }
+    .venue-text, .venue-image {
+      flex: 1 1 30vw;
+    }
+    .footer {
+      background: #333;
+      color: #fff;
+      padding: 2vw;
+    }
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .logo-section, .main-content {
+      flex: 1 1 30vw;
+    }
+    .social-links a {
+      color: #fff;
+      margin: 0 0.5vw;
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1vw;
+    }
+    .links-column {
+      flex: 1 1 15vw;
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: flex;
+      }
+      nav .logos {
+        display: none;
+      }
+      .button-container {
+        flex-direction: column;
+      }
+      .venue-card {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .tile {
+        min-width: 20vw;
+      }
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+      .footer-content {
+        flex-direction: column;
+        align-items: center;
+      }
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
@@ -82,8 +204,9 @@
       <span class="oclock">O'CLOCK</span>
     </h1>
     <div class="button-container">
-      <button class="btn btn-left">Register Now</button>
-      <button class="btn btn-right">Join Discord</button>
+      <a href="https://unstop.com/hackathons/hackoclock-iilm-university-greater-noida-uttar-pradesh-1405875" class="btn btn-left">Register Now</a>
+      <a href="https://forms.gle/WvxLrzCvKDNK8PiM6" class="btn btn-middle">Submit Your Idea's For shortlisting </a>
+      <a href="https://discord.gg/fyHmS66HDT" class="btn btn-right">Join Discord</a>
     </div>  
   </section>
 
@@ -274,11 +397,6 @@
     </div>
 </footer>
 
-  
-  
-
-  
-  
   <script src="script.js"></script>
 </body>
 </html>
