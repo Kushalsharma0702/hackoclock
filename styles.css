@@ -36,7 +36,7 @@ body {
 /* Nav Bar */
 nav {
   height: 10vh;
-  background-color: transparent;
+  background-color: #000;
   display: flex;
   align-items: center;
   justify-content: space-between;

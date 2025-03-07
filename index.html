@@ -10,53 +10,115 @@
 
   <!-- Applying Pixelated Font to All Content -->
   <style>
-    * {
-      font-family: 'Press Start 2P', cursive;
-    }
-    .carousel-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .carousel {
-      display: flex;
-      gap: 20px;
-      transition: transform 0.3s ease;
-    }
-    .tile {
-      min-width: 300px;
-      padding: 1rem;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border-radius: 8px;
-      text-align: center;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    }
-    .arrow {
-      cursor: pointer;
-      font-size: 2rem;
-      margin: 0 10px;
-    }
-    .dots {
-      display: flex;
-      justify-content: center;
-      margin-top: 1rem;
-    }
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      margin: 0 5px;
-      background: #ccc;
-    }
-    .dot.active {
-      background: #333;
-    }
-  </style>
-</head>
+  * {
+    font-family: 'Press Start 2P', cursive;
+  }
+  
+  .carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px; /* Adjust as needed */
+    margin: auto;
+  }
+  
+  .carousel {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Updated Tile Styling */
+  .tile {
+    position: relative;
+    min-width: 300px;
+    height: 300px; /* Square tile */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    /* Removed padding to allow full image coverage */
+    /* padding: 1rem; */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  /* Full Coverage Image */
+  .tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Zoom on Hover */
+  .tile:hover img {
+    transform: scale(1.1);
+  }
+  
+  /* Overlay Text on Hover */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .tile:hover .overlay {
+    opacity: 1;
+  }
+  
+  /* Navigation Arrows */
+  .arrow {
+    cursor: pointer;
+    font-size: 2rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 10px;
+    margin: 0 10px;
+    transition: background 0.3s;
+  }
+  
+  .arrow:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Pagination Dots */
+  .dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+    background: #ccc;
+    transition: background 0.3s;
+  }
+  
+  .dot.active {
+    background: #333;
+  }
+</style>
+</head>  
 <body>
   <!-- Grid Background -->
   <div class="grid-container"></div>
@@ -102,7 +164,8 @@
     <h1>ABOUT US</h1>
     <div class="about-content">
       <p>
-        HackO'Clock is a fast-paced hackathon where developers, designers, and innovators race against time to build innovative solutions. Unlike traditional multi-day hackathons, it challenges participants to ideate, develop, and prototype within a strict 12 or 24-hour timeframe. With themes focused on real-world problems, teams leverage cutting-edge technologies like AI, blockchain, and IoT to create impactful solutions. Judged on innovation, functionality, and feasibility, winning projects often evolve into startups or open-source initiatives. HackO'Clock offers an electrifying environment, mentorship, and a chance to showcase skills under pressure—making it a must-attend event for tech enthusiasts.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque inventore esse odio officiis at laboriosam, explicabo adipisci impedit dolorum tenetur ea cumque aliquam atque, maiores voluptates. Eum eos voluptatum est!
+        Voluptate facere beatae, vero eaque aperiam voluptatibus officia vitae modi totam. Reiciendis maiores nostrum id temporibus quibusdam voluptdvjhsgdjhsgdj hgdchav asdc casdc gshdcsd cgcdsa d cvdcvdghscd 
       </p>
       <div class="dino"></div>
     </div>
@@ -132,9 +195,9 @@
     <h1>JUDGES</h1>
     <div class="judges-container">
       <div class="judge-card">
-        <h2>To Be declared</h2>
+        <h2>Vaibhav Raj</h2>
         <div class="judge-image"></div>
-        <p class="judge-role">Soon</p>
+        <p class="judge-role">Senior Developer at Google</p>
         <div class="social-icons">
           <img src="./assets/linkedin.png" alt="LinkedIn">
           <img src="./assets/mail.png" alt="Email">
@@ -142,9 +205,9 @@
         </div>
       </div>
       <div class="judge-card">
-        <h2>To be Declared</h2>
+        <h2>Vaihav Raj</h2>
         <div class="judge-image"></div>
-        <p class="judge-role">Soon</p>
+        <p class="judge-role">Senior Developer at Google</p>
         <div class="social-icons">
           <img src="./assets/linkedin.png" alt="LinkedIn">
           <img src="./assets/mail.png" alt="Email">
@@ -199,25 +262,78 @@
       <div class="arrow left" onclick="moveLeft()">&#10094;</div>
       <div class="carousel-wrapper">
         <div class="carousel" id="carousel">
-          <div class="tile">No Poverty</div>
-          <div class="tile">Zero Hunger</div>
-          <div class="tile">Good Health and Well-being</div>
-          <div class="tile">Quality Education</div>
-          <div class="tile">Gender Equality</div>
-          <div class="tile">Clean Water and Sanitation</div>
-          <div class="tile">Affordable and Clean Energy</div>
-          <div class="tile">Decent Work and Economic Growth</div>
-          <div class="tile">Industry, Innovation and Infrastructure</div>
-          <div class="tile">Reduced Inequality</div>
-          <div class="tile">Sustainable Cities and Communities</div>
-          <div class="tile">Responsible Consumption and Production</div>
-          <div class="tile">Climate Action</div>
-          <div class="tile">Life Below Water</div>
-          <div class="tile">Life on Land</div>
-          <div class="tile">Peace and Justice Strong Institutions</div>
-          <div class="tile">Partnerships to achieve the Goal</div>
+          <div class="tile">
+            <img src="images/no-poverty.jpg" alt="No Poverty">
+            
+          </div>
+          <div class="tile">
+            <img src="images/zero-hunger.jpg" alt="Zero Hunger">
+            
+          </div>
+          <div class="tile">
+            <img src="images/good-health.jpg" alt="Good Health and Well-being">
+            
+          </div>
+          <div class="tile">
+            <img src="images/quality-education.jpg" alt="Quality Education">
+            
+          </div>
+          <div class="tile">
+            <img src="images/gender-equality.jpg" alt="Gender Equality">
+            
+          </div>
+          <div class="tile">
+            <img src="images/clean-water.jpg" alt="Clean Water and Sanitation">
+            
+          </div>
+          <div class="tile">
+            <img src="images/affordable-energy.jpg" alt="Affordable and Clean Energy">
+            
+          </div>
+          <div class="tile">
+            <img src="images/decent-work.jpg" alt="Decent Work and Economic Growth">
+            
+          </div>
+          <div class="tile">
+            <img src="images/industry-innovation.jpg" alt="Industry, Innovation and Infrastructure">
+            
+          </div>
+          <div class="tile">
+            <img src="images/reduced-inequality.jpg" alt="Reduced Inequality">
+            
+          </div>
+          <div class="tile">
+            <img src="images/sustainable-cities.jpg" alt="Sustainable Cities and Communities">
+            
+          </div>
+          <div class="tile">
+            <img src="images/responsible-consumption.jpg" alt="Responsible Consumption and Production">
+            
+          </div>
+          <div class="tile">
+            <img src="images/climate-action.jpg" alt="Climate Action">
+            
+          </div>
+          <div class="tile">
+            <img src="images/life-below-water.jpg" alt="Life Below Water">
+            
+          </div>
+          <div class="tile">
+            <img src="images/life-on-land.jpg" alt="Life on Land">
+            
+          </div>
+          <div class="tile">
+            <img src="images/peace-justice.jpg" alt="Peace and Justice Strong Institutions">
+            
+          </div>
+          <div class="tile">
+            <img src="images/partnerships.jpg" alt="Partnerships to achieve the Goal">
+            
+          </div>
         </div>
       </div>
+        
+      
       <div class="arrow right" onclick="moveRight()">&#10095;</div>
     </div>
     <div class="dots" id="dots"></div>
