@@ -117,6 +117,47 @@
   .dot.active {
     background: #333;
   }
+  .menu-icon {
+            cursor: pointer;
+            display: inline-block;
+            padding: 10px;
+        }
+        .bar {
+            width: 30px;
+            height: 5px;
+            background-color: black;
+            margin: 6px 0;
+        }
+        .dropdown-menu {
+            display: none;
+            position: fixed;
+            background-color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            list-style: none;
+            top: 60px;
+            right: 10px;
+            width: 200px;
+            border: 1px solid #ccc;
+            z-index: 1000;
+        }
+        .dropdown-menu.active {
+            display: block;
+        }
+        .dropdown-menu li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            color: black;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 16px;
+            background-color: white;
+        }
+        .dropdown-menu li:last-child {
+            border-bottom: none;
+        }
+        .dropdown-menu li:hover {
+            background-color: #f0f0f0;
+        } 
 </style>
 </head>  
 <body>
@@ -126,18 +167,36 @@
   <!-- Nav Bar -->
   <nav>
     <div class="logos">
-      <img src="assets/GDGlogo.png" alt="GDG" class="gdg-logo">
-      <img src="assets/iilmlogo.png" alt="IILM" class="iilm-logo">
+        <img src="assets/GDGlogo.png" alt="GDG" class="gdg-logo">
+        <img src="assets/iilmlogo.png" alt="IILM" class="iilm-logo">
     </div>
-    <div class="menu-icon">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
     </div>
-  </nav>
+</nav>
+<ul class="dropdown-menu" id="dropdownMenu">
+  <li onclick="scrollToSection('hero')">Home</li>
+  <li onclick="scrollToSection('about')">About Us</li>
+  <li onclick="scrollToSection('sponsors')">Our Sponsors</li>
+  <li onclick="scrollToSection('time')">Timeline</li>
+  <li onclick="scrollToSection('problem-statement')">Problem Themes</li>
+</ul>
 
+
+
+<script>
+  function toggleMenu() {
+      document.getElementById("dropdownMenu").classList.toggle("active");
+  }
+  function scrollToSection(sectionId) {
+      toggleMenu(); // Close menu first
+      document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
   <!-- Hero Section -->
-  <section class="hero">
+  <section id="hero" section class="hero">
     <h2 class="presenting">PRESENTING</h2>
     <h1 class="title">
       <span class="hack">HACK</span> 
@@ -150,7 +209,7 @@
     </div>  
   </section>
 
-  <section class="section-2">
+  <section id="sponsors" class="section-2">
     <h2>IN SPONSORS WITH</h2>
     <hr>
     <div class="carousel">
@@ -159,9 +218,10 @@
       <img src="assets/sponsores/image.png" alt="IILM" class="iilm-logo">
     </div>
     <hr>
-  </section>
+</section>
 
-  <section class="section-3">
+
+  <section id="about" section class="section-3">
     <h1>ABOUT US</h1>
     <div class="about-content">
       <p>
@@ -196,7 +256,7 @@
     <h1>JUDGES</h1>
     <div class="judges-container">
       <div class="judge-card">
-        <h2>Vaibhav Raj</h2>
+        <h2>TBD</h2>
         <div class="judge-image"></div>
         <p class="judge-role">Senior Developer at Google</p>
         <div class="social-icons">
@@ -206,7 +266,7 @@
         </div>
       </div>
       <div class="judge-card">
-        <h2>Vaihav Raj</h2>
+        <h2>TBD</h2>
         <div class="judge-image"></div>
         <p class="judge-role">Senior Developer at Google</p>
         <div class="social-icons">
@@ -224,7 +284,7 @@
       <div class="venue-text">
         <h2>Institute of<br>Engineering &<br>Technology</h2>
         <h3>IILM University</h3>
-        <p>Greater Noida,<br>KP 1, UP, 201306</p>
+        <p>Greater Noida,<br>KP 2, UP, 201306</p>
         <button class="directions" onclick="window.location.href='https://www.google.com/maps/dir/28.4609435,77.4893496/Plot+No.18,+Iilm+College+Of+Engineering+%26+Technology,+16,+Knowledge+Park+II,+Greater+Noida,+Uttar+Pradesh+201306/@28.4615198,77.4890829,18z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x390cc1e13dcbf0eb:0xfcf1c4d9749a78b4!2m2!1d77.4913143!2d28.4603517?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D';">
           Directions
         </button>
@@ -235,7 +295,7 @@
     </div>
   </section>
 
-  <section class="TIMELINE">
+  <section id="time" class="TIMELINE">
     <h1>TIMELINE</h1>
     <div class="time-card">
       <img src="./assets/timeline.png" alt="Timeline">
@@ -257,7 +317,7 @@
     </div>
   </section>
 
-  <section class="problem-statement">
+  <section id="problem-statement" class="problem-statement">
     <h1>Problem Statement</h1>
     <div class="carousel-container">
       <div class="arrow left" onclick="moveLeft()">&#10094;</div>
@@ -374,13 +434,7 @@
                     <a href="#">Link tree</a>
                     <a href="#">Devfolio</a>
                 </div>
-                <div class="links-column">
-                    <a href="#">Register</a>
-                    <a href="#">About Us</a>
-                    <a href="#">Our Sponsors</a>
-                    <a href="#">Contact Us</a>
-                    <a href="#">Problem Themes</a>
-                </div>
+                
             </div>
         </div>
     </div>

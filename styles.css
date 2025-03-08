@@ -80,11 +80,13 @@ nav {
 }
 
 /* Hero Section */
-.hero{
+.hero {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  /* Apply the animation */
+  animation: slideIn 1s ease-out forwards;
 }
 
 /* presenting  and title*/
@@ -128,6 +130,8 @@ nav {
   justify-content: space-evenly;
   margin-top: 2%;
   width: 100%;
+  
+
 }
 
 .btn {
