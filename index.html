@@ -10,175 +10,156 @@
 
   <!-- Applying Pixelated Font to All Content -->
   <style>
-    * {
-      font-family: 'Press Start 2P', cursive;
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      padding: 0;
-    }
-    .carousel-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .carousel {
-      display: flex;
-      gap: 2vw;
-      transition: transform 0.3s ease;
-    }
-    .tile {
-      min-width: 30vw;
-      padding: 1vw;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border-radius: 0.8vw;
-      text-align: center;
-      border: 0.1vw solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 4vw 30vw rgba(0, 0, 0, 0.1);
-    }
-    .arrow {
-      cursor: pointer;
-      font-size: 2vw;
-      margin: 0 1vw;
-    }
-    .dots {
-      display: flex;
-      justify-content: center;
-      margin-top: 1vw;
-    }
-    .dot {
-      width: 1vw;
-      height: 1vw;
-      border-radius: 50%;
-      margin: 0 0.5vw;
-      background: #ccc;
-    }
-    .dot.active {
-      background: #333;
-    }
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1vw;
-      background: #333;
-      color: #fff;
-    }
-    .logos img {
-      height: 4vw;
-      margin-right: 1vw;
-    }
-    .menu-icon {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-    .menu-icon .bar {
-      width: 2.5vw;
-      height: 0.3vw;
-      background-color: #fff;
-      margin: 0.4vw 0;
-    }
-    .hero {
-      text-align: center;
-      padding: 2vw;
-    }
-    .button-container {
-      display: flex;
-      justify-content: center;
-      gap: 1vw;
-      margin-top: 1vw;
-    }
-    .btn {
-      padding: 0.5vw 1vw;
-      background: #333;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 0.5vw;
-    }
-    .section-2, .section-3, .section-4, .section-judges, .section-5, .TIMELINE, .problem-statement {
-      padding: 2vw;
-      text-align: center;
-    }
-    .carousel img {
-      max-width: 100%;
-      height: auto;
-    }
-    .venue-card {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 1vw;
-    }
-    .venue-text, .venue-image {
-      flex: 1 1 30vw;
-    }
-    .footer {
-      background: #333;
-      color: #fff;
-      padding: 2vw;
-    }
-    .footer-content {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-    .logo-section, .main-content {
-      flex: 1 1 30vw;
-    }
-    .social-links a {
-      color: #fff;
-      margin: 0 0.5vw;
-    }
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1vw;
-    }
-    .links-column {
-      flex: 1 1 15vw;
-    }
-
-    /* Media Queries */
-    @media (max-width: 768px) {
-      .menu-icon {
-        display: flex;
-      }
-      nav .logos {
-        display: none;
-      }
-      .button-container {
-        flex-direction: column;
-      }
-      .venue-card {
-        flex-direction: column;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .tile {
-        min-width: 20vw;
-      }
-      .btn {
-        width: 100%;
-        text-align: center;
-      }
-      .footer-content {
-        flex-direction: column;
-        align-items: center;
-      }
-      .nav-links {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  </style>
-</head>
+  * {
+    font-family: 'Press Start 2P', cursive;
+  }
+  
+  .carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px; /* Adjust as needed */
+    margin: auto;
+  }
+  
+  .carousel {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Updated Tile Styling */
+  .tile {
+    position: relative;
+    min-width: 300px;
+    height: 300px; /* Square tile */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    /* Removed padding to allow full image coverage */
+    /* padding: 1rem; */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  /* Full Coverage Image */
+  .tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Zoom on Hover */
+  .tile:hover img {
+    transform: scale(1.1);
+  }
+  
+  /* Overlay Text on Hover */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .tile:hover .overlay {
+    opacity: 1;
+  }
+  
+  /* Navigation Arrows */
+  .arrow {
+    cursor: pointer;
+    font-size: 2rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 10px;
+    margin: 0 10px;
+    transition: background 0.3s;
+  }
+  
+  .arrow:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Pagination Dots */
+  .dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+    background: #ccc;
+    transition: background 0.3s;
+  }
+  
+  .dot.active {
+    background: #333;
+  }
+  .menu-icon {
+            cursor: pointer;
+            display: inline-block;
+            padding: 10px;
+        }
+        .bar {
+            width: 30px;
+            height: 5px;
+            background-color: black;
+            margin: 6px 0;
+        }
+        .dropdown-menu {
+            display: none;
+            position: fixed;
+            background-color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            list-style: none;
+            top: 60px;
+            right: 10px;
+            width: 200px;
+            border: 1px solid #ccc;
+            z-index: 1000;
+        }
+        .dropdown-menu.active {
+            display: block;
+        }
+        .dropdown-menu li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            color: black;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 16px;
+            background-color: white;
+        }
+        .dropdown-menu li:last-child {
+            border-bottom: none;
+        }
+        .dropdown-menu li:hover {
+            background-color: #f0f0f0;
+        } 
+</style>
+</head>  
 <body>
   <!-- Grid Background -->
   <div class="grid-container"></div>
@@ -186,18 +167,36 @@
   <!-- Nav Bar -->
   <nav>
     <div class="logos">
-      <img src="assets/GDGlogo.png" alt="GDG" class="gdg-logo">
-      <img src="assets/iilmlogo.png" alt="IILM" class="iilm-logo">
+        <img src="assets/GDGlogo.png" alt="GDG" class="gdg-logo">
+        <img src="assets/iilmlogo.png" alt="IILM" class="iilm-logo">
     </div>
-    <div class="menu-icon">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
     </div>
-  </nav>
+</nav>
+<ul class="dropdown-menu" id="dropdownMenu">
+  <li onclick="scrollToSection('hero')">Home</li>
+  <li onclick="scrollToSection('about')">About Us</li>
+  <li onclick="scrollToSection('sponsors')">Our Sponsors</li>
+  <li onclick="scrollToSection('time')">Timeline</li>
+  <li onclick="scrollToSection('problem-statement')">Problem Themes</li>
+</ul>
 
+
+
+<script>
+  function toggleMenu() {
+      document.getElementById("dropdownMenu").classList.toggle("active");
+  }
+  function scrollToSection(sectionId) {
+      toggleMenu(); // Close menu first
+      document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
   <!-- Hero Section -->
-  <section class="hero">
+  <section id="hero" section class="hero">
     <h2 class="presenting">PRESENTING</h2>
     <h1 class="title">
       <span class="hack">HACK</span> 
@@ -210,7 +209,7 @@
     </div>  
   </section>
 
-  <section class="section-2">
+  <section id="sponsors" class="section-2">
     <h2>IN SPONSORS WITH</h2>
     <hr>
     <div class="carousel">
@@ -219,14 +218,14 @@
       <img src="assets/sponsores/image.png" alt="IILM" class="iilm-logo">
     </div>
     <hr>
-  </section>
+</section>
 
-  <section class="section-3">
+
+  <section id="about" section class="section-3">
     <h1>ABOUT US</h1>
     <div class="about-content">
       <p>
-        HackO'Clock is a fast-paced hackathon where developers, designers, and innovators race against time to build innovative solutions. Unlike traditional multi-day hackathons, it challenges participants to ideate, develop, and prototype within a strict 12 or 24-hour timeframe. With themes focused on real-world problems, teams leverage cutting-edge technologies like AI, blockchain, and IoT to create impactful solutions. Judged on innovation, functionality, and feasibility, winning projects often evolve into startups or open-source initiatives. HackO'Clock offers an electrifying environment, mentorship, and a chance to showcase skills under pressure—making it a must-attend event for tech enthusiasts.
-      </p>
+        HackO'clock A 24 hr hackathon based on GSC 2025</p>
       <div class="dino"></div>
     </div>
   </section>
@@ -255,9 +254,9 @@
     <h1>JUDGES</h1>
     <div class="judges-container">
       <div class="judge-card">
-        <h2>To Be declared</h2>
+        <h2>TBD</h2>
         <div class="judge-image"></div>
-        <p class="judge-role">Soon</p>
+        <p class="judge-role">Senior Developer at Google</p>
         <div class="social-icons">
           <img src="./assets/linkedin.png" alt="LinkedIn">
           <img src="./assets/mail.png" alt="Email">
@@ -265,9 +264,9 @@
         </div>
       </div>
       <div class="judge-card">
-        <h2>To be Declared</h2>
+        <h2>TBD</h2>
         <div class="judge-image"></div>
-        <p class="judge-role">Soon</p>
+        <p class="judge-role">Senior Developer at Google</p>
         <div class="social-icons">
           <img src="./assets/linkedin.png" alt="LinkedIn">
           <img src="./assets/mail.png" alt="Email">
@@ -283,7 +282,7 @@
       <div class="venue-text">
         <h2>Institute of<br>Engineering &<br>Technology</h2>
         <h3>IILM University</h3>
-        <p>Greater Noida,<br>KP 1, UP, 201306</p>
+        <p>Greater Noida,<br>KP 2, UP, 201306</p>
         <button class="directions" onclick="window.location.href='https://www.google.com/maps/dir/28.4609435,77.4893496/Plot+No.18,+Iilm+College+Of+Engineering+%26+Technology,+16,+Knowledge+Park+II,+Greater+Noida,+Uttar+Pradesh+201306/@28.4615198,77.4890829,18z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x390cc1e13dcbf0eb:0xfcf1c4d9749a78b4!2m2!1d77.4913143!2d28.4603517?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D';">
           Directions
         </button>
@@ -294,7 +293,7 @@
     </div>
   </section>
 
-  <section class="TIMELINE">
+  <section id="time" class="TIMELINE">
     <h1>TIMELINE</h1>
     <div class="time-card">
       <img src="./assets/timeline.png" alt="Timeline">
@@ -316,31 +315,84 @@
     </div>
   </section>
 
-  <section class="problem-statement">
+  <section id="problem-statement" class="problem-statement">
     <h1>Problem Statement</h1>
     <div class="carousel-container">
       <div class="arrow left" onclick="moveLeft()">&#10094;</div>
       <div class="carousel-wrapper">
         <div class="carousel" id="carousel">
-          <div class="tile">No Poverty</div>
-          <div class="tile">Zero Hunger</div>
-          <div class="tile">Good Health and Well-being</div>
-          <div class="tile">Quality Education</div>
-          <div class="tile">Gender Equality</div>
-          <div class="tile">Clean Water and Sanitation</div>
-          <div class="tile">Affordable and Clean Energy</div>
-          <div class="tile">Decent Work and Economic Growth</div>
-          <div class="tile">Industry, Innovation and Infrastructure</div>
-          <div class="tile">Reduced Inequality</div>
-          <div class="tile">Sustainable Cities and Communities</div>
-          <div class="tile">Responsible Consumption and Production</div>
-          <div class="tile">Climate Action</div>
-          <div class="tile">Life Below Water</div>
-          <div class="tile">Life on Land</div>
-          <div class="tile">Peace and Justice Strong Institutions</div>
-          <div class="tile">Partnerships to achieve the Goal</div>
+          <div class="tile">
+            <img src="images/no-poverty.jpg" alt="No Poverty">
+            
+          </div>
+          <div class="tile">
+            <img src="images/zero-hunger.jpg" alt="Zero Hunger">
+            
+          </div>
+          <div class="tile">
+            <img src="images/good-health.jpg" alt="Good Health and Well-being">
+            
+          </div>
+          <div class="tile">
+            <img src="images/quality-education.jpg" alt="Quality Education">
+            
+          </div>
+          <div class="tile">
+            <img src="images/gender-equality.jpg" alt="Gender Equality">
+            
+          </div>
+          <div class="tile">
+            <img src="images/clean-water.jpg" alt="Clean Water and Sanitation">
+            
+          </div>
+          <div class="tile">
+            <img src="images/affordable-energy.jpg" alt="Affordable and Clean Energy">
+            
+          </div>
+          <div class="tile">
+            <img src="images/decent-work.jpg" alt="Decent Work and Economic Growth">
+            
+          </div>
+          <div class="tile">
+            <img src="images/industry-innovation.jpg" alt="Industry, Innovation and Infrastructure">
+            
+          </div>
+          <div class="tile">
+            <img src="images/reduced-inequality.jpg" alt="Reduced Inequality">
+            
+          </div>
+          <div class="tile">
+            <img src="images/sustainable-cities.jpg" alt="Sustainable Cities and Communities">
+            
+          </div>
+          <div class="tile">
+            <img src="images/responsible-consumption.jpg" alt="Responsible Consumption and Production">
+            
+          </div>
+          <div class="tile">
+            <img src="images/climate-action.jpg" alt="Climate Action">
+            
+          </div>
+          <div class="tile">
+            <img src="images/life-below-water.jpg" alt="Life Below Water">
+            
+          </div>
+          <div class="tile">
+            <img src="images/life-on-land.jpg" alt="Life on Land">
+            
+          </div>
+          <div class="tile">
+            <img src="images/peace-justice.jpg" alt="Peace and Justice Strong Institutions">
+            
+          </div>
+          <div class="tile">
+            <img src="images/partnerships.jpg" alt="Partnerships to achieve the Goal">
+            
+          </div>
         </div>
       </div>
+        
+      
       <div class="arrow right" onclick="moveRight()">&#10095;</div>
     </div>
     <div class="dots" id="dots"></div>
@@ -380,13 +432,7 @@
                     <a href="#">Link tree</a>
                     <a href="#">Devfolio</a>
                 </div>
-                <div class="links-column">
-                    <a href="#">Register</a>
-                    <a href="#">About Us</a>
-                    <a href="#">Our Sponsors</a>
-                    <a href="#">Contact Us</a>
-                    <a href="#">Problem Themes</a>
-                </div>
+                
             </div>
         </div>
     </div>
