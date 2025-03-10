@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Hack O'Clock</title>
   <link rel="stylesheet" href="styles.css">
   <!-- Importing Pixelated Font -->
@@ -21,28 +23,28 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    max-width: 1200px; /* Adjust as needed */
+    max-width: 1200vw; /* Adjust as needed */
     margin: auto;
   }
   
   .carousel {
     display: flex;
-    gap: 20px;
+    gap: 2vw;
     transition: transform 0.3s ease;
   }
   
   /* Updated Tile Styling */
   .tile {
     position: relative;
-    min-width: 300px;
-    height: 300px; /* Square tile */
+    min-width: 30vw;
+    height: 30vh; /* Square tile */
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 8px;
+    backdrop-filter: blur(1vh);
+    border-radius: 0.8vh;
     /* Removed padding to allow full image coverage */
     /* padding: 1rem; */
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 0.1vh solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4vh 30vh rgba(0, 0, 0, 0.1);
     overflow: hidden;
   }
   
@@ -72,8 +74,8 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 14px;
-    padding: 1rem;
+    font-size: 1.4vh;
+    padding: 1vh;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
   }
@@ -85,12 +87,12 @@
   /* Navigation Arrows */
   .arrow {
     cursor: pointer;
-    font-size: 2rem;
+    font-size: 2vh;
     color: white;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 50%;
-    padding: 10px;
-    margin: 0 10px;
+    padding: 1vh;
+    margin: 0 1vh;
     transition: background 0.3s;
   }
   
@@ -102,14 +104,14 @@
   .dots {
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
+    margin-top: 1vh;
   }
   
   .dot {
-    width: 10px;
-    height: 10px;
+    width: 1vh;
+    height: 1vh;
     border-radius: 50%;
-    margin: 0 5px;
+    margin: 0 0.5vh;
     background: #ccc;
     transition: background 0.3s;
   }
@@ -120,36 +122,36 @@
   .menu-icon {
             cursor: pointer;
             display: inline-block;
-            padding: 10px;
+            padding: 1vh;
         }
         .bar {
-            width: 30px;
-            height: 5px;
+            width: 3vh;
+            height: 0.5vh;
             background-color: black;
-            margin: 6px 0;
+            margin: 0.6vh 0;
         }
         .dropdown-menu {
             display: none;
             position: fixed;
             background-color: white;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 10px;
+            box-shadow: 0vh 4vh 6vh rgba(0, 0, 0, 0.1);
+            padding: 1vh;
             list-style: none;
-            top: 60px;
-            right: 10px;
-            width: 200px;
-            border: 1px solid #ccc;
+            top: 6vh;
+            right: 1vh;
+            width: 20vh;
+            border: 0.1vh solid #ccc;
             z-index: 1000;
         }
         .dropdown-menu.active {
             display: block;
         }
         .dropdown-menu li {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
+            padding: 1vh;
+            border-bottom: 0.1vh solid #ddd;
             color: black;
             font-family: 'Press Start 2P', cursive;
-            font-size: 16px;
+            font-size: 1.6vh;
             background-color: white;
         }
         .dropdown-menu li:last-child {
@@ -198,7 +200,7 @@
   <!-- Hero Section -->
   <section id="hero" section class="hero">
     <h2 class="presenting">PRESENTING</h2>
-    <h1 class="title">
+    <h1 class="title" style="text-align: center;">
       <span class="hack">HACK</span> 
       <span class="oclock">O'CLOCK</span>
     </h1>
@@ -223,14 +225,12 @@
 
   <section id="about" section class="section-3">
     <h1>ABOUT US</h1>
+    <h1 class="section-3" style="text-align: center;"></h1>
     <div class="about-content">
       <p>
-<<<<<<< Updated upstream
-        </p>
-=======
-        HackO'Clock is a</p> fast-paced hackathon where developers, designers, and innovators race against time to build innovative solutions. Unlike traditional multi-day hackathons, it challenges participants to ideate, develop, and prototype within a strict 12 or 24-hour timeframe. With themes focused on real-world problems, teams leverage cutting-edge technologies like AI, blockchain, and IoT to create impactful solutions. Judged on innovation, functionality, and feasibility, winning projects often evolve into startups or open-source initiatives. HackO'Clock offers an electrifying environment, mentorship, and a chance to showcase skills under pressure—making it a must-attend event for tech enthusiasts.
+        HackO'Clock is a fast-paced hackathon where developers, designers, and innovators race against time to build innovative solutions. Unlike traditional multi-day hackathons, it challenges participants to ideate, develop, and prototype within a strict 12 or 24-hour timeframe. With themes focused on real-world problems, teams leverage cutting-edge technologies like AI, blockchain, and IoT to create impactful solutions. Judged on innovation, functionality, and feasibility, winning projects often evolve into startups or open-source initiatives. HackO'Clock offers an electrifying environment, mentorship, and a chance to showcase skills under pressure—making it a must-attend event for tech enthusiasts.
       </p>
->>>>>>> Stashed changes
+
       <div class="dino"></div>
   </section>
 
@@ -258,9 +258,9 @@
     <h1>JUDGES</h1>
     <div class="judges-container">
       <div class="judge-card">
-        <h2>TBD</h2>
+        <h2>Revealing Soon</h2>
         <div class="judge-image"></div>
-        <p class="judge-role">Senior Developer at Google</p>
+        <p class="judge-role"></p>
         <div class="social-icons">
           <img src="./assets/linkedin.png" alt="LinkedIn">
           <img src="./assets/mail.png" alt="Email">
@@ -268,9 +268,9 @@
         </div>
       </div>
       <div class="judge-card">
-        <h2>TBD</h2>
+        <h2>Revealing Soon</h2>
         <div class="judge-image"></div>
-        <p class="judge-role">Senior Developer at Google</p>
+        <p class="judge-role"></p>
         <div class="social-icons">
           <img src="./assets/linkedin.png" alt="LinkedIn">
           <img src="./assets/mail.png" alt="Email">
