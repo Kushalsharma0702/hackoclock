@@ -39,8 +39,6 @@
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 8px;
-    /* Removed padding to allow full image coverage */
-    /* padding: 1rem; */
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -158,7 +156,7 @@
         .dropdown-menu li:hover {
             background-color: #f0f0f0;
         } 
-</style>
+  </style>
 </head>  
 <body>
   <!-- Grid Background -->
@@ -184,8 +182,6 @@
   <li onclick="scrollToSection('problem-statement')">Problem Themes</li>
 </ul>
 
-
-
 <script>
   function toggleMenu() {
       document.getElementById("dropdownMenu").classList.toggle("active");
@@ -196,7 +192,7 @@
   }
 </script>
   <!-- Hero Section -->
-  <section id="hero" section class="hero">
+  <section id="hero" class="hero">
     <h2 class="presenting">PRESENTING</h2>
     <h1 class="title">
       <span class="hack">HACK</span> 
@@ -208,6 +204,18 @@
       <a href="https://discord.gg/fyHmS66HDT" class="btn btn-right">Join Discord</a>
     </div>  
   </section>
+  <section id="about" class="section-3">
+    <h1>ABOUT US</h1>
+    <div class="about-content">
+      <p>HackO'Clock is a fast-paced hackathon where developers, designers, and innovators race against time to build innovative solutions. Unlike traditional multi-day hackathons, it challenges participants to ideate, develop, and prototype within a strict 12 or 24-hour timeframe.  
+
+With themes focused on real-world problems, teams leverage cutting-edge technologies like AI, blockchain, and IoT to create impactful solutions. Judged on innovation, functionality, and feasibility, winning projects often evolve into startups or open-source initiatives.  
+
+HackO'Clock offers an electrifying environment, mentorship, and a chance to showcase skills under pressure—making it a must-attend event for tech enthusiasts.</p>
+      <div class="dino"></div>
+    </div>
+  </section>
+
 
   <section id="sponsors" class="section-2">
     <h2>IN SPONSORS WITH</h2>
@@ -218,42 +226,6 @@
       <img src="assets/sponsores/image.png" alt="IILM" class="iilm-logo">
     </div>
     <hr>
-</section>
-
-
-  <section id="about" section class="section-3">
-    <h1>ABOUT US</h1>
-    <div class="about-content">
-      
-        
-
-<p>HackO'Clock is a fast-paced hackathon where developers, designers, and innovators race against time to build innovative solutions. Unlike traditional multi-day hackathons, it challenges participants to ideate, develop, and prototype within a strict 12 or 24-hour timeframe.  
-
-With themes focused on real-world problems, teams leverage cutting-edge technologies like AI, blockchain, and IoT to create impactful solutions. Judged on innovation, functionality, and feasibility, winning projects often evolve into startups or open-source initiatives.  
-
-HackO'Clock offers an electrifying environment, mentorship, and a chance to showcase skills under pressure—making it a must-attend event for tech enthusiasts.</p>
-      <div class="dino"></div>
-    </div>
-  </section>
-
-  <section class="section-4">
-    <h1>GLIMPSES</h1>
-    <div class="container">
-      <div class="row">
-        <div class="b-card"></div>
-        <div class="x-card"></div>
-        <div class="x-card"></div>
-      </div>
-      <div class="row">
-        <div class="c-card"></div>
-        <div class="c-card"></div>
-        <div class="d-card"></div>
-      </div>
-      <div class="row">
-        <div class="s-card"></div>
-        <div class="s-card"></div>
-      </div>
-    </div>
   </section>
 
   <section class="section-judges">
@@ -282,46 +254,30 @@ HackO'Clock offers an electrifying environment, mentorship, and a chance to show
     </div>
   </section>
 
-  <section class="section-5">
-    <h1>VENUE</h1>
-    <div class="venue-card">
-      <div class="venue-text">
-        <h2>Institute of<br>Engineering &<br>Technology</h2>
-        <h3>IILM University</h3>
-        <p>Greater Noida,<br>KP 2, UP, 201306</p>
-        <button class="directions" onclick="window.location.href='https://www.google.com/maps/dir/28.4609435,77.4893496/Plot+No.18,+Iilm+College+Of+Engineering+%26+Technology,+16,+Knowledge+Park+II,+Greater+Noida,+Uttar+Pradesh+201306/@28.4615198,77.4890829,18z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x390cc1e13dcbf0eb:0xfcf1c4d9749a78b4!2m2!1d77.4913143!2d28.4603517?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D';">
-          Directions
-        </button>
+  
+
+  <section class="section-4">
+    <h1>GLIMPSES</h1>
+    <div class="container">
+      <div class="row">
+        <div class="b-card"></div>
+        <div class="x-card"></div>
+        <div class="x-card"></div>
       </div>
-      <div class="venue-image">
-        <img src="./assets/iilmbuilding.png" alt="IILM University">
+      <div class="row">
+        <div class="c-card"></div>
+        <div class="c-card"></div>
+        <div class="d-card"></div>
+      </div>
+      <div class="row">
+        <div class="s-card"></div>
+        <div class="s-card"></div>
       </div>
     </div>
   </section>
 
-  <section id="time" class="TIMELINE">
-    <h1>TIMELINE</h1>
-    <div class="time-card">
-      <img src="./assets/timeline.png" alt="Timeline">
-      <div class="schedule">
-        <div class="days">
-          <p>DAY 1</p>
-          <hr>
-          <p>DAY 2</p>
-        </div>
-        <div class="events">
-          <ul>
-            <li>Registration 9:00</li>
-            <li>Opening Ceremony 9:45</li>
-            <li>Idea Sacking 10:57</li>
-            <li>Registration 9:00</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="problem-statement" class="problem-statement">
+  <section class="problem-statement">
     <h1>Problem Statement</h1>
     <div class="carousel-container">
       <div class="arrow left" onclick="moveLeft()">&#10094;</div>
@@ -381,7 +337,7 @@ HackO'Clock offers an electrifying environment, mentorship, and a chance to show
           </div>
           <div class="tile">
             <img src="images/life-below-water.jpg" alt="Life Below Water">
-            
+          
           </div>
           <div class="tile">
             <img src="images/life-on-land.jpg" alt="Life on Land">
@@ -403,8 +359,73 @@ HackO'Clock offers an electrifying environment, mentorship, and a chance to show
     </div>
     <div class="dots" id="dots"></div>
   </section>
+ 
 
-  <footer class="footer">
+  <section class="section-5">
+    <h1>VENUE</h1>
+    <div class="venue-card">
+      <div class="venue-text">
+        <h2>Institute of<br>Engineering &<br>Technology</h2>
+        <h3>IILM University</h3>
+        <p>Greater Noida,<br>KP 2, UP, 201306</p>
+        <button class="directions" onclick="window.location.href='https://www.google.com/maps/dir/28.4609435,77.4893496/Plot+No.18,+Iilm+College+Of+Engineering+%26+Technology,+16,+Knowledge+Park+II,+Greater+Noida,+Uttar+Pradesh+201306/@28.4615198,77.4890829,18z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x390cc1e13dcbf0eb:0xfcf1c4d9749a78b4!2m2!1d77.4913143!2d28.4603517?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D';">
+          Directions
+        </button>
+      </div>
+      <div class="venue-image">
+        <img src="./assets/iilmbuilding.png" alt="IILM University">
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <section id="time" class="section-6">
+    <h1>TIMELINE</h1>
+    <ul>
+      <li style="--accent-color:#41516C">
+        <div class="date">28-03-25</div>
+        <div class="title">Round-1</div>
+        <div class="descr">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas itaque hic quibusdam fugiat est numquam harum, accusamus suscipit consequatur laboriosam!</div>
+      </li>
+      <li style="--accent-color:#FBCA3E">
+        <div class="date">2007</div>
+        <div class="title">Title 2</div>
+        <div class="descr">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos adipisci nobis nostrum vero nihil veniam.</div>
+      </li>
+      <li style="--accent-color:#E24A68">
+        <div class="date">2012</div>
+        <div class="title">Title 3</div>
+        <div class="descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga minima consequuntur soluta placeat iure totam commodi repellendus ea delectus, libero fugit quod reprehenderit, sequi quo, et dolorum saepe nulla hic.</div>
+      </li>
+      <li style="--accent-color:#1B5F8C">
+        <div class="date">2017</div>
+        <div class="title">Title 4</div>
+        <div class="descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, cumque.</div>
+      </li>
+      <li style="--accent-color:#4CADAD">
+        <div class="date">2022</div>
+        <div class="title">Title 5</div>
+        <div class="descr">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, non.</div>
+      </li>
+    </ul>
+    <div class="credits"><a target="_blank" href="https://www.freepik.com/free-vector/infographic-template-with-yearly-info_1252895.htm">inspired by</a></div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
     <div class="footer-content">
         <!-- Logos and Social Section -->
         <div class="logo-section">
@@ -438,7 +459,6 @@ HackO'Clock offers an electrifying environment, mentorship, and a chance to show
                     <a href="#">Link tree</a>
                     <a href="#">Devfolio</a>
                 </div>
-                
             </div>
         </div>
     </div>
@@ -447,7 +467,7 @@ HackO'Clock offers an electrifying environment, mentorship, and a chance to show
     <div class="credits">
         Designed &amp; Developed by love of:  Google Developers Group IILM University
     </div>
-</footer>
+  </footer>
 
   <script src="script.js"></script>
 </body>
