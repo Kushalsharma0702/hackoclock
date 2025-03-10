@@ -40,9 +40,9 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 2;
   position: sticky;
   top: 0;
+  z-index: 9999; /* Ensure nav bar stays on top */
 }
 
 .logos {
