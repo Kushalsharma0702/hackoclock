@@ -40,9 +40,9 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 2;
   position: sticky;
   top: 0;
+  z-index: 9999; /* Ensure nav bar stays on top */
 }
 
 .logos {
@@ -781,3 +781,84 @@ h1 {
         gap: 2rem;
     }
 }
+/* Responsive Homepage Text Adjustments 
+@media (max-width: 1024px) {
+  .presenting {
+    font-size: 35px;
+    letter-spacing: 4px;
+    margin-top: 8%;
+  }
+  .title {
+    font-size: 60px;
+  }
+  .hack, .oclock {
+    font-size: 70px;
+  }
+  .btn {
+    font-size: 14px;
+    padding: 10px 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .presenting {
+    font-size: 30px;
+    letter-spacing: 3px;
+    margin-top: 5%;
+  }
+  .title {
+    font-size: 50px;
+  }
+  .hack, .oclock {
+    font-size: 55px;
+  }
+  .btn {
+    font-size: 13px;
+    padding: 8px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .presenting {
+    font-size: 25px;
+    letter-spacing: 2px;
+    margin-top: 3%;
+  }
+  .title {
+    font-size: 40px;
+  }
+  .hack, .oclock {
+    font-size: 45px;
+  }
+  .btn {
+    font-size: 12px;
+    padding: 6px 15px;
+  }
+}*/
+/* Responsive Homepage Text Using Viewport Units and Clamp */
+.presenting {
+  /* Font size will never go below 25px or above 45px, but scales with viewport width */
+  font-size: clamp(25px, 4vw, 45px);
+  /* Letter spacing and margin-top also scale with the viewport */
+  letter-spacing: clamp(2px, 0.5vw, 5px);
+  margin-top: clamp(3%, 5vh, 10%);
+}
+
+.title {
+  /* Scales between 40px and 80px */
+  font-size: clamp(40px, 6vw, 80px);
+}
+
+.hack,
+.oclock {
+  /* Scales between 45px and 90px */
+  font-size: clamp(45px, 8vw, 90px);
+}
+
+.btn {
+  /* Button text scales fluidly with the viewport width */
+  font-size: clamp(12px, 1.5vw, 15px);
+  /* Padding adjusts with both viewport height and width */
+  padding: clamp(6px, 1vh, 12px) clamp(15px, 2vw, 30px);
+}
+
