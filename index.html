@@ -131,18 +131,19 @@
             margin: 0.6vh 0;
         }
         .dropdown-menu {
-            display: none;
-            position: fixed;
-            background-color: white;
-            box-shadow: 0vh 4vh 6vh rgba(0, 0, 0, 0.1);
-            padding: 1vh;
-            list-style: none;
-            top: 6vh;
-            right: 1vh;
-            width: 20vh;
-            border: 0.1vh solid #ccc;
-            z-index: 1000;
-        }
+  display: none;
+  position: fixed;
+  background-color: rgb(234, 228, 228);
+  box-shadow: 0 4vh 6vh rgba(0, 0, 0, 0.1);
+  padding: 0.5vh;   /* Reduced padding */
+  list-style: none;
+  top: 1vh;         /* Moved closer to the top */
+  right: 1vh;
+  width: 20vh;
+  border: 0.1vh solid #ccc;
+  z-index: 1000;
+}
+
         .dropdown-menu.active {
             display: block;
         }
@@ -423,6 +424,63 @@ HackO'Clock offers an electrifying environment, mentorship, and a chance to show
     </ul>
     <div class="credits"><a target="_blank" href="https://www.freepik.com/free-vector/infographic-template-with-yearly-info_1252895.htm">inspired by</a></div>
   </section>
+  <section id="qna" class="section-qna">
+    <h1>Q&A</h1>
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleAnswer(this)">
+        <span class="question-text">1.What is Hack O'Clock?</span>
+        
+      </div>
+      <div class="qa-answer">
+        <p>Hack O'Clock is a fast-paced hackathon where developers and designers collaborate under a strict time limit to build innovative solutions.</p>
+      </div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleAnswer(this)">
+        <span class="question-text">2.How do I register for the event?</span>
+        
+      </div>
+      <div class="qa-answer">
+        <p>You can register by clicking on the "Register Now" button on the homepage and filling out the registration form.</p>
+      </div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleAnswer(this)">
+        <span class="question-text">3.What are the hackathon themes?</span>
+        
+      </div>
+      <div class="qa-answer">
+        <p>The themes focus on real-world challenges and include sustainability, innovation in technology, and creative problem-solving.</p>
+      </div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleAnswer(this)">
+        <span class="question-text">4.Is there a registration fee?</span>
+        
+      </div>
+      <div class="qa-answer">
+        <p>No, participation in Hack O'Clock is completely free for all registered participants.</p>
+      </div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-question" onclick="toggleAnswer(this)">
+        <span class="question-text">5.Where can I find more details?</span>
+        
+      </div>
+      <div class="qa-answer">
+        <p>More details are available on our website and social media channels. Please check the FAQ and announcement sections for updates.</p>
+      </div>
+    </div>
+  </section>
+  <script>
+    function toggleAnswer(element) {
+      // Toggle the "active" class on the parent qa-item element
+      var qaItem = element.parentElement;
+      qaItem.classList.toggle("active");
+    }
+  </script>
+  
+  
 
 
 
