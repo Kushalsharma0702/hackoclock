@@ -14,18 +14,18 @@ p {
 
 /* Hero Section */
 .hero {
-  padding-top: 8vh;
+  padding-top: 20vh;
   padding-bottom: 4vh;
 }
 
 /* Section 2 (Carousel) */
 .section-2 {
-  margin-top: 6rem;
+  margin-top: 1rem;
   padding: 3rem 2rem;
 }
 
 .carousel {
-  margin-top: 2rem;
+  margin-top: 10rem;
 }
 
 /* Section 3 (About) */
@@ -504,7 +504,7 @@ nav {
   align-items: center;
   flex-direction: row;
   margin-top: 2%;
-  height: 20%;
+  height: 30%;
   width: 100%;
 }
 
@@ -917,8 +917,8 @@ h1 {
 
 .tile {
   flex: 0 0 auto;
-  width: 200px;
-  height: 250px;
+  width: 100px;
+  height: 200px; /* Set height equal to width */
   background: black;
   color: white;
   display: flex;
