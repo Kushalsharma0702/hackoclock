@@ -312,11 +312,10 @@ body {
   font-family: 'Poppins', sans-serif;
   color: white;
   position: relative;
+  overflow-x: hidden;
 }
 
-
-
-*{
+* {
   z-index: 2;
 }
 
@@ -523,12 +522,15 @@ hr{
 .section-3 {
   text-align: center;
   padding: 5vh 10vw;
+  white-space: normal;
 }
 
 .section-3 h1{
   font-size: 5rem;
   /* font-family: 'Creepster', cursive; */
   letter-spacing: 10px;
+  text-align: center;
+  
   /* -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #ff5733; */
 }
@@ -648,6 +650,7 @@ p {
   justify-content: center;
   height: auto;
   width: 100%;
+  
 }
 
 .section-judges h1 {
@@ -663,6 +666,7 @@ p {
   justify-content: center;
   gap: 20%;
   margin-top: 30px;
+  /* background-color: red; */
 }
 
 .judge-card {
@@ -673,6 +677,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  /* background-color: red; */
 }
 
 .judge-card h2 {
@@ -685,6 +690,8 @@ p {
   height: 200px;
   background-color: #d3d3d3;
   margin: 15px auto;
+  /* background-color: orange; */
+  border-radius: 10px;
 }
 
 .judge-name {
@@ -1078,6 +1085,11 @@ h1 {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 0.6rem;
     color: #888;
+}
+@media (max-width: 768px) {
+  html, body {
+      overflow-x: hidden;
+  }
 }
 
 @media (max-width: 768px) {
