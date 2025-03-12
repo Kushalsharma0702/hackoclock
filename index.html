@@ -120,48 +120,92 @@
     background: #333;
   }
   .menu-icon {
-            cursor: pointer;
-            display: inline-block;
-            padding: 1vh;
-        }
-        .bar {
-            width: 3vh;
-            height: 0.5vh;
-            background-color: black;
-            margin: 0.6vh 0;
-        }
-        .dropdown-menu {
-  display: none;
-  position: fixed;
-  background-color: rgb(234, 228, 228);
-  box-shadow: 0 4vh 6vh rgba(0, 0, 0, 0.1);
-  padding: 0.5vh;   /* Reduced padding */
-  list-style: none;
-  top: 1vh;         /* Moved closer to the top */
-  right: 1vh;
-  width: 20vh;
-  border: 0.1vh solid #ccc;
-  z-index: 1000;
+  cursor: pointer;
+  display: inline-block;
+  padding: 1vh;
 }
 
-        .dropdown-menu.active {
-            display: block;
-        }
-        .dropdown-menu li {
-            padding: 1vh;
-            border-bottom: 0.1vh solid #ddd;
-            color: black;
-            font-family: 'Press Start 2P', cursive;
-            font-size: 1.6vh;
-            background-color: white;
-        }
-        .dropdown-menu li:last-child {
-            border-bottom: none;
-        }
-        .dropdown-menu li:hover {
-            background-color: #f0f0f0;
-        } 
-  </style>
+.bar {
+  width: 3vh;
+  height: 0.5vh;
+  background-color: black;
+  margin: 0.6vh 0;
+}
+
+nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+    }
+    .logos img {
+      height: 50px;
+    }
+    
+    /* Menu Icon */
+    .menu-icon {
+      cursor: pointer;
+      display: inline-block;
+      padding: 0.5rem;
+    }
+    .menu-icon .bar {
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      margin: 4px 0;
+      transition: background-color 0.3s;
+    }
+    .menu-icon:hover .bar {
+      background-color: #4CAF50;
+    }
+
+    /* Dropdown Menu */
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 70px; /* Adjusted to appear below the nav */
+      right: 20px;
+      width: 200px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      padding: 0;
+      list-style: none;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      z-index: 1000;
+    }
+    .dropdown-menu.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .dropdown-menu li {
+      padding: 12px 16px;
+      border-bottom: 0.5px solid #eee;
+      color: #333;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      background-color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .dropdown-menu li:last-child {
+      border-bottom: none;
+    }
+    .dropdown-menu li:hover {
+      background-color: #f5f5f5;
+    }
+</style>
 </head>  
 <body>
   <!-- Grid Background -->
@@ -170,32 +214,46 @@
   <!-- Nav Bar -->
   <nav>
     <div class="logos">
-        <img src="assets/GDGlogo.png" alt="GDG" class="gdg-logo">
-        <img src="assets/iilmlogo.png" alt="IILM" class="iilm-logo">
+      <img src="assets/GDGlogo.png" alt="GDG Logo">
+      <img src="assets/iilmlogo.png" alt="IILM Logo">
     </div>
     <div class="menu-icon" onclick="toggleMenu()">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
     </div>
-</nav>
-<ul class="dropdown-menu" id="dropdownMenu">
-  <li onclick="scrollToSection('hero')">Home</li>
-  <li onclick="scrollToSection('about')">About Us</li>
-  <li onclick="scrollToSection('sponsors')">Our Sponsors</li>
-  <li onclick="scrollToSection('time')">Timeline</li>
-  <li onclick="scrollToSection('problem-statement')">Problem Themes</li>
-</ul>
+    
+    <!-- Dropdown Menu -->
+    <ul class="dropdown-menu" id="dropdownMenu">
+      <li onclick="scrollToSection('hero')">Home</li>
+      <li onclick="scrollToSection('about')">About Us</li>
+      <li onclick="scrollToSection('sponsors')">Our Sponsors</li>
+      <li onclick="scrollToSection('time')">Timeline</li>
+      <li onclick="scrollToSection('problem-statement')">Problem Themes</li>
+    </ul>
+  </nav>
 
-<script>
-  function toggleMenu() {
-      document.getElementById("dropdownMenu").classList.toggle("active");
-  }
-  function scrollToSection(sectionId) {
-      toggleMenu(); // Close menu first
-      document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
-  }
-</script>
+  <script>
+    const toggleMenu = () => {
+      const menu = document.getElementById("dropdownMenu");
+      if (menu) {
+        menu.classList.toggle("active");
+      } else {
+        console.warn("Dropdown menu element not found.");
+      }
+    };
+
+    const scrollToSection = (sectionId) => {
+      toggleMenu(); // Close the menu first
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      } else {
+        console.warn(`Section with ID "${sectionId}" not found.`);
+      }
+    };
+  </script>
+
   <!-- Hero Section -->
   <section id="hero" class="hero">
     <h1 style="text-align: center;">GOOGLE DEVELOPERS GROUP IILM UNIVERSITY</h1>
@@ -287,7 +345,7 @@ HackO'Clock offers an electrifying environment, mentorship, and a chance to show
   </section>
 
 
-  <section class="problem-statement">
+  <section id="problem-statement" class="problem-statement">
     <h1>Problem Statements</h1>
     <div class="carousel-container">
       <div class="arrow left" onclick="moveLeft()">&#10094;</div>
@@ -519,62 +577,57 @@ HackO'Clock offers an electrifying environment, mentorship, and a chance to show
       qaItem.classList.toggle("active");
     }
   </script>
-  
-  
-
-
-
-
-
-
-
-
-
-
-<footer class="footer">
-    <div class="footer-content">
-        <!-- Logos and Social Section -->
-        <div class="logo-section">
-            <div class="main-logos">
-                <img src="./assets/GDGlogo.png" alt="Google Developer Group" class="logo">
-                <img src="./assets/iilmlogo.png" alt="IILM University" class="logo">
-            </div>
-            <div class="social-links">
-                <a href="#" class="social-icon linkedin"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="social-icon gmail"><i class="fas fa-envelope"></i></a>
-                <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-
-        <!-- Main Content -->
-        <div class="main-content">
-            <!-- Description -->
-            <div class="description">
-                <span class="hack-text">HackOclock</span>, a groundbreaking hackathon by 
-                <span class="gdg-text">Google Developers Group</span> and 
-                <span class="iilm-text">IILM University</span>, 
-                <span class="location-text">Greater Noida U.P.</span>, 
-                redefines creativity and technology. Join us in the pursuit of innovation, 
-                transcending traditional hackathons.
-            </div>
-
-            <!-- Navigation Links -->
-            <div class="nav-links">
-                <div class="links-column">
-                    <h3>Useful Links</h3>
-                    <a href="#">Link tree</a>
-                    <a href="#">Devfolio</a>
-                </div>
-            </div>
-        </div>
+  <section id="support" class="support">
+    <h2 style="text-align: center;">Support & Organizers</h2>
+    <div class="support-details" style="text-align: center;">
+      <p><strong>Organizers:</strong> Kushal Sharma(GDG Lead),Tanmay Jain</p>
+      <p><strong>Email:</strong> hackoclock.gdgiilm@gmail.com</p>
+      <p><strong>Contact Number:</strong> +91 7417119014</p>
     </div>
-
+  </section>
+  <footer class="footer">
+    <div class="footer-content">
+      <!-- Logos and Social Section -->
+      <div class="logo-section">
+        <div class="main-logos">
+          <img src="./assets/GDGlogo.png" alt="Google Developer Group" class="iillogo">
+          <img src="./assets/iilmlogo.png" alt="IILM University" class="logo">
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-icon linkedin"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="social-icon gmail"><i class="fas fa-envelope"></i></a>
+          <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+  
+      <!-- Main Content -->
+      <div class="main-content">
+        <!-- Description -->
+        <div class="description">
+          <span class="hack-text">HackOclock</span>, a groundbreaking hackathon by 
+          <span class="gdg-text">Google Developers Group</span> and 
+          <span class="iilm-text">IILM University</span>, 
+          <span class="location-text">Greater Noida U.P.</span>, redefines creativity and technology. 
+          Join us in the pursuit of innovation, transcending traditional hackathons.
+        </div>
+  
+        <!-- Navigation Links -->
+        <div class="nav-links">
+          <div class="links-column">
+            <h3>Useful Links</h3>
+            <a href="#">Link tree</a>
+            <a href="#">Devfolio</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
     <!-- Credits -->
     <div class="credits">
-        Designed &amp; Developed by love of:  Google Developers Group IILM University
+      Designed &amp; Developed with ❤️ by Google Developers Group & IILM University
     </div>
   </footer>
-
+  
   <script src="script.js"></script>
 </body>
 </html>
