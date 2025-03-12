@@ -154,8 +154,9 @@ ul::before {
   content: "";
   grid-column: 1;
   grid-row: 1 / span 20;
-  background: rgb(225, 225, 225);
+  background: rgb(255, 255, 255);
   border-radius: calc(var(--line-w) / 2);
+  align-items: center;
 }
 
 /* columns*/
@@ -304,6 +305,7 @@ ul li .descr::before {
 .credits a {
   color: var(--color);
 }
+/* full body here */
 /* General Reset */
 body {
   margin: 0;
@@ -1181,4 +1183,66 @@ h1 {
   font-size: clamp(12px, 1.5vw, 15px);
   /* Padding adjusts with both viewport height and width */
   padding: clamp(6px, 1vh, 12px) clamp(15px, 2vw, 30px);
+}
+/* Q&A Section Styling */
+/* Q&A Section Styling */
+.section-qna {
+  padding: 2vh;
+  background-color: #000000;
+  margin-top: 4vh;
+}
+
+.section-qna h1 {
+  text-align: center;
+  margin-bottom: 2vh;
+  font-size: 2.5vh;
+  color: #f6f6f6;
+}
+
+.qa-item {
+  border-bottom: 0.1vh solid #ddd;
+  padding: 1vh 0;
+}
+
+.qa-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Question text styling */
+.qa-question .question-text {
+  font-size: 1.8vh;
+  color: #f7f4f4;
+}
+
+/* Adding arrow automatically at the end of each question */
+.qa-question::after {
+  content: '\25BC';  /* Unicode for a downward arrow */
+  font-size: 1.8vh;
+  color: #ffffff;
+  margin-left: 1vh;  /* Spacing between text and arrow */
+  transition: transform 0.3s ease;
+}
+
+.qa-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.qa-item.active .qa-answer {
+  max-height: 20vh; /* Increase if answers are longer */
+}
+
+/* Rotate arrow when active */
+.qa-item.active .qa-question::after {
+  transform: rotate(180deg);
+}
+
+.qa-answer p {
+  margin: 0.5vh 0 0;
+  font-size: 1.6vh;
+  color: #fdfdfd;
 }
