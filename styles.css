@@ -154,8 +154,9 @@ ul::before {
   content: "";
   grid-column: 1;
   grid-row: 1 / span 20;
-  background: rgb(225, 225, 225);
+  background: rgb(255, 255, 255);
   border-radius: calc(var(--line-w) / 2);
+  align-items: center;
 }
 
 /* columns*/
@@ -304,6 +305,7 @@ ul li .descr::before {
 .credits a {
   color: var(--color);
 }
+/* full body here */
 /* General Reset */
 body {
   margin: 0;
@@ -1242,5 +1244,5 @@ h1 {
 .qa-answer p {
   margin: 0.5vh 0 0;
   font-size: 1.6vh;
-  color: #555;
+  color: #fdfdfd;
 }
