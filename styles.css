@@ -789,17 +789,25 @@ p {
   align-items: center;
   justify-content: center;
   height: auto;
+  padding: 2.5vh; /* Add padding for better spacing */
+  width: 100vw; /* Ensure it takes full width */
+  display: flex; /* Use flexbox for centering */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
 }
 
 h1 {
-  font-size: 4vw;
-  letter-spacing: 10px;
+  font-size: 8vw; /* Adjust font size for responsiveness */
+  letter-spacing: 0.6vw; /* Adjust letter-spacing for responsiveness */
+  margin-bottom: 2.5vh; /* Add margin for spacing */
+  text-align: center; /* Center the heading */
 }
 
 .time-card {
   position: relative;
-  width: 80%;
-  max-width: 900px;
+  width: 90vw; /* Adjust width for responsiveness */
+  max-width: 90vw;
+  margin: 0 auto; /* Center the card */
 }
 
 .time-card img {
@@ -814,29 +822,27 @@ h1 {
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  width: 100%;
-  padding: 20px;
+  flex-wrap: wrap; /* Allow wrapping for responsiveness */
+  justify-content: center; /* Center the content */
+  gap: 10px; /* Adjust gap for responsiveness */
+  width: 90%; /* Adjust width for responsiveness */
+  padding: 10px; /* Adjust padding for responsiveness */
 }
 
 .days {
   border: 2px solid white;
-  padding: 30px;
+  padding: 15px; /* Adjust padding for responsiveness */
   text-align: center;
-  font-size: 2vw;
+  font-size: 3vw; /* Adjust font size for responsiveness */
   border-radius: 10px;
-  height: auto;
-  width: 20vw;
-  margin-bottom: -4.688vw;
-  margin-left: 150px;
+  width: 40%; /* Adjust width for responsiveness */
+  max-width: 200px; /* Limit maximum width */
+  margin: 5px; /* Adjust margin for spacing */
 }
 
 .days p {
-  margin: 20px 0;
+  margin: 10px 0; /* Adjust margin for spacing */
   font-weight: bold;
-  margin-left: 15px;
 }
 
 .days hr {
@@ -845,15 +851,37 @@ h1 {
 }
 
 .events {
-  font-size: 1.3vw;
+  font-size: 2.5vw; /* Adjust font size for responsiveness */
   text-align: left;
-  line-height: 1.5;
-  margin-bottom: -6vw;
-  padding: 20px;
+  line-height: 1.3; /* Adjust line height for responsiveness */
+  padding: 10px; /* Adjust padding for responsiveness */
   border-radius: 10px;
-  margin-right: 120px;
+  width: 45%; /* Adjust width for responsiveness */
+  max-width: 300px; /* Limit maximum width */
+  margin: 5px; /* Adjust margin for spacing */
 }
 
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 10vw; /* Adjust font size for smaller screens */
+    letter-spacing: 3px; /* Adjust letter-spacing for smaller screens */
+  }
+
+  .days,
+  .events {
+    font-size: 4vw; /* Adjust font size for smaller screens */
+    width: 90%; /* Full width on smaller screens */
+    max-width: none; /* Remove maximum width restriction */
+    margin: 10px 0; /* Adjust margin for spacing */
+  }
+
+  .schedule {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center; /* Center items on smaller screens */
+    gap: 10px; /* Adjust gap for smaller screens */
+  }
+}
 /* Problem Statement */
 .problem-statement {
   display: flex;
